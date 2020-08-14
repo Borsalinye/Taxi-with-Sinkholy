@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DocumentsSchema"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="documents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="passport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="number" type="xs:string"/>
+              <xs:element name="birthDate" type="xs:date"/>
+              <xs:element name="issuedDate" type="xs:date"/>
+              <xs:element name="gender" type="xs:string"/>
+              <xs:element name="issuedPlace" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="droverLicense" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="number" type="xs:string"/>
+              <xs:element name="issuedDate" type="xs:date"/>
+              <xs:element name="issuedPlace" type="xs:string"/>
+              <xs:element name="expirationDate" type="xs:date"/>
+              <xs:element name="categories" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="categorie" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="inn" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
